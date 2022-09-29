@@ -61,6 +61,33 @@ class Solution {
         return dp[weights.length - 1][capacity];
     }
 
+    public int solveKnapsackBottomUpMem(int[] profits, int[] weights, int capacity) {
+        // init dp for only 2 rows
+        int[][] dp = new int[2][capacity + 1];
+        dp[0][0] = 0;
+        dp[1][0] = 0;
+        for (int i = 1; i <= capacity; i++) {
+            if (weights[0] <= i) {
+                dp[0][i] = weights[0];
+            }
+        }
+        // the values of previous row is only needed to calculate the current row
+        // so if even row,, fetch values from previous row %2 , and store it in current
+        // row
+        // vice versa
+        for (int i = 1; i < weights.length; i++) {
+            for (int j = 1; j <= capacity; j++) {
+                int incProfit = 0, excProfit = 0;
+                if (weights[i] <= j) {
+                    incProfit = profits[i] + dp[(i - 1) % 2][j - weights[i]];
+                }
+                excProfit = dp[(i - 1) % 2][j];
+                dp[i % 2][j] = Math.max(incProfit, excProfit);
+            }
+        }
+        return dp[(weights.length - 1) % 2][capacity];
+    }
+
     public static void main(String[] args) {
         Solution ks = new Solution();
         int[] profits = { 1, 6, 10, 16 };
@@ -74,6 +101,11 @@ class Solution {
         System.out.println("Total knapsack profitrec ---> " + maxProfit);
         maxProfit = ks.solveKnapsackBottomUp(profits, weights, 6);
         System.out.println("Total knapsack profitrec ---> " + maxProfit);
+
+        maxProfit = ks.solveKnapsackBottomUpMem(profits, weights, 7);
+        System.out.println("Total knapsack profitrec memory efficient ---> " + maxProfit);
+        maxProfit = ks.solveKnapsackBottomUpMem(profits, weights, 6);
+        System.out.println("Total knapsack profitrec memory efficient ---> " + maxProfit);
 
     }
 }
