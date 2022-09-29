@@ -1,5 +1,7 @@
 # Two Pointers 
 
+### Tags
+#linkedlist #linked #list #twopointers #two #pointer
 # Cycle Detection using Fast and Slow Pointer
 
 ## Detect if cycle exists
@@ -12,6 +14,7 @@
 3. If the fast pointer is null, there is no cycle and the pointer has reached the end of the list. 
    
 ### Example image to demonstrate the actions
+
 
 
 ## Node where cycle exists
