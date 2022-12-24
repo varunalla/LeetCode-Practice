@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.LC49_Group_Anagrams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,10 +7,10 @@ import java.util.List;
 
 /*
  * from LeetCode root Directory
- * javac -cp . Arrays/LC49_Group_Anagrams.java
- * java -cp . Arrays/LC49_Group_Anagrams
+ * java -cp . Arrays/LC49_Group_Anagrams/Solution.java
+ * 
  */
-class LC49_Group_Anagrams {
+public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> result=new ArrayList<>();
         HashMap<String,List<String>> cache=new HashMap<>();
@@ -28,7 +28,7 @@ class LC49_Group_Anagrams {
         return result;
     }
     public static void main(String[] inputs){
-        LC49_Group_Anagrams sol=new LC49_Group_Anagrams();
+        Solution sol=new Solution();
         String[] input=new String[]{"eat","tea","tan","ate","nat","bat"};
         List<List<String>> groups=sol.groupAnagrams(input);
         int i=0;

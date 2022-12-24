@@ -1,10 +1,9 @@
-package Arrays;
+package Arrays.LC981_Time_Based_Key_Value_Store;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.TreeMap;
 
-public class LC981_Time_Based_Key_Value_Store {
+public class Solution {
     public static void main(String[] args) {
         TimeMap timeMap=new TimeMap();
         timeMap.set("foo", "bar", 1);  // store the key "foo" and value "bar" along with timestamp = 1.
@@ -25,18 +24,7 @@ public class LC981_Time_Based_Key_Value_Store {
         System.out.println(timeMap.get("love", 15));         // return "bar2"
         System.out.println(timeMap.get("love", 20));
         System.out.println(timeMap.get("love", 25));   
-     /*    int[] nums=new int[]{10,20};
-        System.out.println(findLocation(nums, 5));
-        System.out.println(findLocation(nums, 10));
-        System.out.println(findLocation(nums, 15));
-        System.out.println(findLocation(nums, 20));
-        System.out.println(findLocation(nums, 25));
-System.out.println("-------------------------------------------------");
-         nums=new int[]{1,4};
-        System.out.println(nums[findLocation(nums, 1)]);
-        System.out.println(nums[findLocation(nums, 3)]);
-        System.out.println(nums[findLocation(nums, 4)]);
-        System.out.println(nums[findLocation(nums, 5)]);*/
+ 
     }
     public static int findLocation(int[] nums, int key){
         int min=0;

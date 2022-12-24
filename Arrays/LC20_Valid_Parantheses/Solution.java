@@ -1,9 +1,9 @@
-package Arrays;
+package Arrays.LC20_Valid_Parantheses;
 
 import java.util.HashMap;
 import java.util.Stack;
 
-public class LC20_Valid_Parantheses {
+public class Solution {
     
     public boolean isValid(String s) {
         HashMap<Character,Character> mapchars=new HashMap<>();
@@ -34,7 +34,7 @@ public class LC20_Valid_Parantheses {
         return st.empty();
     }
     public static void main(String[] args) {
-        LC20_Valid_Parantheses sol=new LC20_Valid_Parantheses();
+        Solution sol=new Solution();
         System.out.println("()");
         System.out.println(sol.isValid("()"));
         System.out.println("()[]{}");

@@ -1,4 +1,4 @@
-package Stack;
+package Stacks.LC155_Min_Stack;
 
 import java.util.Stack;
 
@@ -42,7 +42,7 @@ class MinStack {
  * int param_4 = obj.getMin();
  */
 
-public class LC155_Min_Stack {
+public class Solution {
     public static void main(String[] args) {
         MinStack minStack = new MinStack();
         minStack.push(-2);

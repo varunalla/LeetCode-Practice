@@ -1,9 +1,9 @@
-package Arrays;
+package Arrays.LC17_Letter_Combinations_Phone_Number;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class LC17_Letter_Combinations_Phone_Number{
+public class Solution{
     String[] map= new String[]{"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     public List<String> letterCombinations(String digits) {
         if(digits==null||digits.length()==0){
@@ -26,7 +26,7 @@ class LC17_Letter_Combinations_Phone_Number{
             }
     }
     public static void main(String[] args) {
-        LC17_Letter_Combinations_Phone_Number sol=new LC17_Letter_Combinations_Phone_Number();
+        Solution sol=new Solution();
         List<String> strs= sol.letterCombinations("23");
         for(String str:strs){
             System.out.println(str);
