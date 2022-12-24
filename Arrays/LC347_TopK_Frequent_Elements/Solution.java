@@ -1,13 +1,13 @@
-package Arrays;
+package Arrays.LC347_TopK_Frequent_Elements;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
 /***
- * java -cp . Arrays/LC347_TopK_Frequent_Elements.java
+ * java -cp . Arrays/LC347_TopK_Frequent_Elements/Solution.java
  */
-class LC347_TopK_Frequent_Elements {
+public class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer,Integer> cache=new HashMap<>();
         PriorityQueue<Map.Entry<Integer,Integer>> q=new PriorityQueue<>((a,b)->b.getValue()-a.getValue());
@@ -28,7 +28,7 @@ class LC347_TopK_Frequent_Elements {
         return result;
     }
     public static void main(String[] args) {
-        LC347_TopK_Frequent_Elements sol=new LC347_TopK_Frequent_Elements();
+        Solution sol=new Solution();
         int[] input=new int[]{1,1,1,2,2,3};
         int[] answer=sol.topKFrequent(input, 2);
         for(int i=0;i<answer.length;i++){
